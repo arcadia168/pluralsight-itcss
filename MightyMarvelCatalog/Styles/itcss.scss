@@ -26,8 +26,20 @@
 @import "app/elements.main";
 
 /* Objects Layer */
-@import "app/objects.contentBoundary"
+@import "app/objects.contentBoundary";
 
 /* Components Layer */
+@import "app/compnents.goNext";
+@import "app/components.characterCard";
+@import "app/components.goBack";
+@import "app/components.toolBar";
+@import "app/components.goToFirst";
+@import "app/components.goToLast";
+@import "app/components.mainMenu";
+@import "app/components.pageBanner";
+@import "app/components.pageFooter";
+@import "app/components.search";
+@import "app/components.searchForm";
+@import "app/components.searchResults";
 
 /* Trumps Layer */

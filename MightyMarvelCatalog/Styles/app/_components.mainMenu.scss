@@ -1,0 +1,6 @@
+.mainMenu {
+    background: linear-gradient($barBackgroundColor, $gradientBackgroundColor, $barBackgroundColor);
+    border-radius: $borderRadius;
+    margin: $defaultVerticalMargin auto;
+    padding: $defaultPadding;
+}

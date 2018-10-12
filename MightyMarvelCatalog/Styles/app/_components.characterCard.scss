@@ -1,0 +1,35 @@
+.characterCard {
+    @include column('right');
+
+    & .description {
+        display: inline-block;
+        margin-right: $defaultHorizontalMargin;
+        vertical-align: top;
+        width: $leftColumnWidth;
+
+        & p {
+            margin-bottom: $defaultVerticalMargin;
+        }
+
+        & ul.statistics {
+            list-style: square;
+
+            &>li {
+                /* left margin override - 
+                    default value causes <li> 
+                    to extend beyond container */
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    & .thumbnail {
+        display: inline-block;
+        width: $rightColumnWidth;
+
+        & img {
+            max-height: 20rem;
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.searchForm {
+    margin-bottom: $defaultVerticalMargin;
+
+    & ul {
+        display: inline-block;
+        list-style: none;
+
+        &>li {
+            display: inline-block;
+            font-weight: bold;
+        }
+    }
+
+    & button {
+        @include button;
+    }
+
+    & label {
+        color: $alternateTextColor;
+        font-weight: bold;
+    }
+
+    & input[type=text] {
+        border-radius: $borderRadius;
+        font-family: $baseFontFamily;
+        font-size: $baseFontSize;
+        padding: $defaultPadding;
+    }
+}

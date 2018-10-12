@@ -1,0 +1,15 @@
+.toolbar {
+    background: linear-gradient($barBackgroundColor, $gradientBackgroundColor, $barBackgroundColor);
+    color: $alternateTextColor;
+    display: block;
+    padding: $defaultPadding;
+    text-align: center;
+
+    &>div {
+        margin-bottom: $defaultVerticalMargin;
+    }
+
+    & button {
+        @include button;
+    }
+}

@@ -1,0 +1,19 @@
+.searchResults {
+    @include column('left');
+
+    & ul {
+        list-style: none;
+        margin-bottom: $defaultVerticalMargin;
+
+        &>li {
+            border-bottom: $defaultBorder;
+            padding: $defaultPadding;
+
+            &:hover {
+                background-color: $buttonHoverBackgroundColor;
+                color: $alternateTextColor;
+                cursor: pointer;
+            }
+        }
+    }
+}
