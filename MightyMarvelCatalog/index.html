@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Roboto:400,700" rel="stylesheet" />
+    <link href="Styles/vendor/toastr.min.css" rel="stylesheet" />-->
+    <link href="Styles/traditional-sass.min.css" rel="stylesheet" />
+    
+    <script data-main="/Scripts/app/requireConfig" src="/Scripts/vendor/require.js"></script>
+
+    <title>The Mighty Marvel Character Catalog</title>
+</head>
+
+<body>
+    <header class="pageBanner">
+        <section class="contentBoundary">
+            <article>
+                <h1>The Mighty Marvel Character Catalog!</h1>
+            </article>
+            <article class="mainMenu">
+                <nav class="searchForm">
+                    <ul id="lstLetters" data-bind="foreach: Alphabet">
+                        <li>
+                            <button data-bind="text: $data"></button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="searchForm">
+                    <label for="txtCharacterName">Search by Character Name:</label>
+                    <input id="txtCharacterName" type="text" data-bind="value: SearchCriteria" />
+                    <button id="btnSearchCharactersByName" class="search">Search</button>
+                </nav>
+            </article>
+        </section>
+    </header>
+
+    <main>
+        <section class="contentBoundary">
+            <article class="searchResults" data-bind="visible: Paging().Count > 0">
+                <header>
+                    <h2>Results for '<span data-bind="text: SearchCriteria"></span>'</h2>
+                </header>
+
+                <section>
+                    <ul id="lstCharacterSearchResults" data-bind="foreach: Characters">
+                        <li data-bind="text: name"></li>
+                    </ul>
+                </section>
+
+                <footer class="toolbar">
+                    <div>
+                        <span data-bind="text: Paging().Offset + 1"></span> to
+                        <span data-bind="text: Paging().Count + Paging().Offset"></span> of
+                        <span data-bind="text: Paging().Total"></span> characters
+                    </div>
+
+                    <div>
+                        <button id="btnGetFirstPage" class="goToFirst">First</button>
+                        <button id="btnGetPreviousPage" class="goBack">Back</button>
+                        <button id="btnGetNextPage" class="goNext">Next</button>
+                        <button id="btnGetLastPage" class="goToLast">Last</button>
+                    </div>
+                </footer>
+            </article>
+            <article class="characterCard" data-bind="if: SelectedCharacter(), visible: SelectedCharacter()">
+                <header>
+                    <h2 data-bind="text: SelectedCharacter().name"></h2>
+                </header>
+
+                <section class="description">
+                    <p data-bind="html: SelectedCharacter().description"></p>
+
+                    <p data-bind="html: SelectedCharacter().name + ' has appeared in:'"></p>
+
+                    <ul class="statistics">
+                        <li data-bind="text: SelectedCharacter().comics.available + ' comics'"></li>
+                        <li data-bind="text: SelectedCharacter().stories.available + ' stories'"></li>
+                        <li data-bind="text: SelectedCharacter().events.available+ ' events'"></li>
+                        <li data-bind="text: SelectedCharacter().series.available+ ' series'"></li>
+                    </ul>
+                </section>
+
+                <section class="thumbnail">
+                    <img data-bind="attr: { src: SelectedCharacter().thumbnail.path + '/detail.' + SelectedCharacter().thumbnail.extension }" />
+                </section>
+
+                <footer data-bind="if: SelectedCharacter()" class="toolbar">
+                    <a data-bind="attr: { href: SelectedCharacter().urls[0].url, target: '_blank' }">Go to Official Page</a>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <footer class="pageFooter">
+        <section class="contentBoundary">
+            <article>
+                <a href="http://marvel.com">Data provided by Marvel. © 2017 MARVEL</a>
+            </article>
+        </section>
+    </footer>
+</body>
+
+</html>

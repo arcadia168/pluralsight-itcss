@@ -1,0 +1,335 @@
+﻿@import "https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Roboto:400,700";
+
+@import"vendor/toastr.min.css";
+
+@font-face
+{
+    font-family: 'FontAwesome';
+    src: url("fonts/fontawesome-webfont.eot?v=4.7.0");
+    src: url("fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$borderColor: #082c5c;
+$defaultTextColor: #0e0a23;
+$barBackgroundColor: #4a113c;
+$defaultBackgroundColor: #0777d9;
+$gradientBackgroundColor: rgba($barBackgroundColor, 0.3);
+$buttonFaceColor: #f0f0f0;
+$buttonHoverBackgroundColor: #e60330;
+$alternateTextColor: #fff;
+
+$baseFontSize: 16px;
+$headerFontSize: 3rem;
+$subHeaderFontSize: 2rem;
+$footerFontSize: 0.75rem;
+
+$minimumPageWidth: 320px;
+$contentBoundaryWidth: 90%;
+$leftColumnWidth: 32%;
+$rightColumnWidth: 66%;
+
+$defaultPadding: 0.25rem;
+$defaultVerticalMargin: 1rem;
+$defaultHorizontalMargin: 1%;
+
+$defaultBorder: thin solid $borderColor;
+$borderRadius: 5px;
+
+$minimumButtonWidth: 2rem;
+
+$baseFontFamily: 'Roboto', sans-serif;
+$headerFontFamily: 'Cherry Cream Soda', cursive;
+
+@mixin button
+{
+    background-color: $buttonFaceColor;
+    border: $defaultBorder;
+    border-radius: $borderRadius;
+    color: $defaultTextColor;
+    display: inline-block;
+    font-size: $baseFontSize;
+    margin: 0 $defaultHorizontalMargin $defaultVerticalMargin $defaultHorizontalMargin;
+    min-width: $minimumButtonWidth;
+    padding: $defaultPadding;
+    text-decoration: none;
+
+    &:hover
+    {
+        background-color: $buttonHoverBackgroundColor;
+        color: $alternateTextColor;
+        cursor: pointer;
+    }
+}
+
+@mixin column($side)
+{
+    background-color: $gradientBackgroundColor;
+    border: $defaultBorder;
+    border-radius: $borderRadius;
+    color: $defaultTextColor;
+    display: inline-block;
+    padding: $defaultPadding;
+    vertical-align: top;
+
+    @if $side == 'left'
+    {
+        margin-right: $defaultHorizontalMargin;
+        width: $leftColumnWidth;
+    }
+    @else
+    {
+        width: $rightColumnWidth;
+    }
+}
+
+*
+{
+    border: none;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+html
+{
+    font-family: $baseFontFamily;
+    font-size: $baseFontSize;
+}
+
+body
+{
+    color: $defaultBackgroundColor;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    min-width: $minimumPageWidth;
+}
+
+header
+{
+    width: 100%;
+}
+
+.pageBanner
+{
+    background: linear-gradient($borderColor, $defaultBackgroundColor);
+    text-align: center;
+}
+
+.contentBoundary
+{
+    display: block;
+    width: $contentBoundaryWidth;
+}
+
+h1
+{
+    color: $alternateTextColor;
+    font-family: $headerFontFamily;
+    font-size: $headerFontSize;
+}
+
+.mainMenu
+{
+    background: linear-gradient($barBackgroundColor, $gradientBackgroundColor, $barBackgroundColor);
+    border-radius: $borderRadius;
+    margin: $defaultVerticalMargin auto;
+    padding: $defaultPadding;
+}
+
+.searchForm
+{
+    margin-bottom: $defaultVerticalMargin;
+
+    & ul
+    {
+        display: inline-block;
+        list-style: none;
+
+        & > li
+        {
+            display: inline-block;
+            font-weight: bold;
+        }
+    }
+
+    & button
+    {
+        @include button;
+    }
+
+    & label
+    {
+        color: $alternateTextColor;
+        font-weight: bold;
+    }
+
+    & input[type=text]
+    {
+        border-radius: $borderRadius;
+        font-family: $baseFontFamily;
+        font-size: $baseFontSize;
+        padding: $defaultPadding;
+    }
+}
+
+.search:after
+{
+    font-family: FontAwesome;
+    content: "\00a0\f002";
+}
+
+main
+{
+    background-color: $defaultBackgroundColor;
+    flex: 1 1 0;
+    width: 100%;
+}
+
+.searchResults
+{
+    @include column('left');
+
+    & h2
+    {
+        font-family: $headerFontFamily;
+        font-size: $subHeaderFontSize;
+    }
+
+    & ul
+    {
+        list-style: none;
+        margin-bottom: $defaultVerticalMargin;
+
+        & > li
+        {
+            border-bottom: $defaultBorder;
+            padding: $defaultPadding;
+
+            &:hover
+            {
+                background-color: $buttonHoverBackgroundColor;
+                color: $alternateTextColor;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+footer
+{
+    font-size: $footerFontSize;
+}
+
+.toolbar
+{
+    background: linear-gradient($barBackgroundColor, $gradientBackgroundColor, $barBackgroundColor);
+    color: $alternateTextColor;
+    display: block;
+    padding: $defaultPadding;
+    text-align: center;
+
+    & > div
+    {
+        margin-bottom: $defaultVerticalMargin;
+    }
+
+    & button
+    {
+        @include button;
+    }
+}
+
+.goToFirst:before
+{
+    font-family: FontAwesome;
+    content: "\f049\00a0";
+}
+
+.goBack:before
+{
+    font-family: FontAwesome;
+    content: "\f048\00a0";
+}
+
+.goNext:after
+{
+    font-family: FontAwesome;
+    content: "\00a0\f051";
+}
+
+.goToLast:after
+{
+    font-family: FontAwesome;
+    content: "\00a0\f050";
+}
+
+.characterCard
+{
+    @include column('right');
+
+    & h2
+    {
+        font-family: $headerFontFamily;
+        font-size: $subHeaderFontSize;
+    }
+
+    & .description
+    {
+        display: inline-block;
+        margin-right: $defaultHorizontalMargin;
+        vertical-align: top;
+        width: $leftColumnWidth;
+
+        & p
+        {
+            margin-bottom: $defaultVerticalMargin;
+        }
+
+        & ul.statistics
+        {
+            list-style: square;
+
+            & > li
+            {
+                /* left margin override - 
+                    default value causes <li> 
+                    to extend beyond container */
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    & .thumbnail
+    {
+        display: inline-block;
+        width: $rightColumnWidth;
+
+        & img
+        {
+            max-height: 20rem;
+            max-width: 100%;
+        }
+    }
+}
+
+a, a:link, a:visited
+{
+    color: $alternateTextColor;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+.pageFooter
+{
+    background: linear-gradient($defaultBackgroundColor, $borderColor);
+    flex: 0 0 0;
+    padding: $defaultPadding;
+    width: 100%;
+}
