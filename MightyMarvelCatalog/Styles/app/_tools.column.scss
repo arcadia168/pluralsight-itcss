@@ -1,0 +1,20 @@
+@mixin column($side)
+{
+    background-color: $gradientBackgroundColor;
+    border: $defaultBorder;
+    border-radius: $borderRadius;
+    color: $defaultTextColor;
+    display: inline-block;
+    padding: $defaultPadding;
+    vertical-align: top;
+
+    @if $side == 'left'
+    {
+        margin-right: $defaultHorizontalMargin;
+        width: $leftColumnWidth;
+    }
+    @else
+    {
+        width: $rightColumnWidth;
+    }
+}

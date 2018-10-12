@@ -1,0 +1,20 @@
+@mixin button
+{
+    background-color: $buttonFaceColor;
+    border: $defaultBorder;
+    border-radius: $borderRadius;
+    color: $defaultTextColor;
+    display: inline-block;
+    font-size: $baseFontSize;
+    margin: 0 $defaultHorizontalMargin $defaultVerticalMargin $defaultHorizontalMargin;
+    min-width: $minimumButtonWidth;
+    padding: $defaultPadding;
+    text-decoration: none;
+
+    &:hover
+    {
+        background-color: $buttonHoverBackgroundColor;
+        color: $alternateTextColor;
+        cursor: pointer;
+    }
+}
