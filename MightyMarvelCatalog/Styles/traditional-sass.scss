@@ -1,18 +1,7 @@
-﻿@import "https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Roboto:400,700";
-
-@import"vendor/toastr.min.css";
-
-.pageBanner {
+﻿.pageBanner {
     background: linear-gradient($borderColor, $defaultBackgroundColor);
     text-align: center;
 }
-
-.contentBoundary {
-    display: block;
-    width: $contentBoundaryWidth;
-}
-
-
 
 .mainMenu {
     background: linear-gradient($barBackgroundColor, $gradientBackgroundColor, $barBackgroundColor);
