@@ -74,14 +74,28 @@ main {
   color: #0e0a23;
   display: inline-block;
   padding: 0.25rem;
-  vertical-align: top;
-  width: 66%; }
+  vertical-align: top; }
+
+@media screen and (max-width: 680px) {
+  .characterCard {
+    width: 100%; } }
+
+@media screen and (min-width: 681px) {
+  .characterCard {
+    width: 66%; } }
 
 .characterCard .description {
   display: inline-block;
-  margin-right: 1%;
-  vertical-align: top;
-  width: 32%; }
+  vertical-align: top; }
+
+@media screen and (max-width: 680px) {
+  .characterCard .description {
+    width: 100%; } }
+
+@media screen and (min-width: 681px) {
+  .characterCard .description {
+    margin-right: 1%;
+    width: 32%; } }
 
 .characterCard .description p {
   margin-bottom: 1rem; }
@@ -96,8 +110,15 @@ main {
   margin-left: 1rem; }
 
 .characterCard .thumbnail {
-  display: inline-block;
-  width: 66%; }
+  display: inline-block; }
+
+@media screen and (max-width: 680px) {
+  .characterCard .thumbnail {
+    width: 100%; } }
+
+@media screen and (min-width: 681px) {
+  .characterCard .thumbnail {
+    width: 66%; } }
 
 .characterCard .thumbnail img {
   max-height: 20rem;
@@ -207,9 +228,16 @@ main {
   color: #0e0a23;
   display: inline-block;
   padding: 0.25rem;
-  vertical-align: top;
-  margin-right: 1%;
-  width: 32%; }
+  vertical-align: top; }
+
+@media screen and (max-width: 680px) {
+  .searchResults {
+    width: 100%; } }
+
+@media screen and (min-width: 681px) {
+  .searchResults {
+    margin-right: 1%;
+    width: 32%; } }
 
 .searchResults ul {
   list-style: none;
