@@ -1,13 +1,15 @@
 /* Settings Layer */
-@import "app/settings.colours";
-@import "app/settings.borders";
 @import "app/settings.font-family";
 @import "app/settings.font-sizes";
+@import "app/settings.colours";
+@import "app/settings.borders";
 @import "app/settings.margins";
 @import "app/settings.padding";
 @import "app/settings.widths";
 
 /* Tools Layer */
+@import "app/tools.desktop";
+@import "app/tools.mobile";
 @import "app/tools.column";
 @import "app/tools.button";
 
@@ -41,6 +43,9 @@
 @import "app/components.search";
 @import "app/components.searchForm";
 @import "app/components.searchResults";
+
+/* Third Party Layer */
+@import "vendor/toastr.scss";
 
 /* Trumps Layer */
 @import "app/trumps.buttonSearchCharactersByName";

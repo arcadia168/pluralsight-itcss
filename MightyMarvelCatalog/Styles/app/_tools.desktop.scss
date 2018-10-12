@@ -1,0 +1,5 @@
+@mixin desktop {
+    @media screen and (min-width: #{$mobileBreakpointWidth + 1}) {
+        @content;
+    }
+}
