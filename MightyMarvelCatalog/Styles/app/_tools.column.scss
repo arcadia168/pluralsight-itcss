@@ -1,5 +1,4 @@
-@mixin column($side)
-{
+@mixin column($side) {
     background-color: $gradientBackgroundColor;
     border: $defaultBorder;
     border-radius: $borderRadius;
@@ -8,13 +7,20 @@
     padding: $defaultPadding;
     vertical-align: top;
 
-    @if $side == 'left'
-    {
-        margin-right: $defaultHorizontalMargin;
-        width: $leftColumnWidth;
+    @include mobile {
+        width: 100%;
     }
-    @else
-    {
-        width: $rightColumnWidth;
+
+    @include desktop {
+        @if $side=='left'
+
+            {
+            margin-right: $defaultHorizontalMargin;
+            width: $leftColumnWidth;
+        }
+
+        @else {
+            width: $rightColumnWidth;
+        }
     }
 }
