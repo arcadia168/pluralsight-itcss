@@ -2,82 +2,48 @@
 
 @import"vendor/toastr.min.css";
 
-html
-{
-    font-family: $baseFontFamily;
-    font-size: $baseFontSize;
-}
-
-body
-{
-    color: $defaultBackgroundColor;
-    display: flex;
-    flex-flow: column;
-    min-height: 100vh;
-    min-width: $minimumPageWidth;
-}
-
-header
-{
-    width: 100%;
-}
-
-.pageBanner
-{
+.pageBanner {
     background: linear-gradient($borderColor, $defaultBackgroundColor);
     text-align: center;
 }
 
-.contentBoundary
-{
+.contentBoundary {
     display: block;
     width: $contentBoundaryWidth;
 }
 
-h1
-{
-    color: $alternateTextColor;
-    font-family: $headerFontFamily;
-    font-size: $headerFontSize;
-}
 
-.mainMenu
-{
+
+.mainMenu {
     background: linear-gradient($barBackgroundColor, $gradientBackgroundColor, $barBackgroundColor);
     border-radius: $borderRadius;
     margin: $defaultVerticalMargin auto;
     padding: $defaultPadding;
 }
 
-.searchForm
-{
+.searchForm {
     margin-bottom: $defaultVerticalMargin;
 
-    & ul
-    {
+    & ul {
         display: inline-block;
         list-style: none;
 
-        & > li
-        {
+        &>li {
             display: inline-block;
             font-weight: bold;
         }
     }
 
-    & button
-    {
+    & button {
         @include button;
     }
 
-    & label
-    {
+    & label {
         color: $alternateTextColor;
         font-weight: bold;
     }
 
-    & input[type=text]
-    {
+    & input[type=text] {
         border-radius: $borderRadius;
         font-family: $baseFontFamily;
         font-size: $baseFontSize;
@@ -85,41 +51,23 @@ h1
     }
 }
 
-.search:after
-{
+.search:after {
     font-family: FontAwesome;
     content: "\00a0\f002";
 }
 
-main
-{
-    background-color: $defaultBackgroundColor;
-    flex: 1 1 0;
-    width: 100%;
-}
-
-.searchResults
-{
+.searchResults {
     @include column('left');
 
-    & h2
-    {
-        font-family: $headerFontFamily;
-        font-size: $subHeaderFontSize;
-    }
-
-    & ul
-    {
+    & ul {
         list-style: none;
         margin-bottom: $defaultVerticalMargin;
 
-        & > li
-        {
+        &>li {
             border-bottom: $defaultBorder;
             padding: $defaultPadding;
 
-            &:hover
-            {
+            &:hover {
                 background-color: $buttonHoverBackgroundColor;
                 color: $alternateTextColor;
                 cursor: pointer;
@@ -128,82 +76,59 @@ main
     }
 }
 
-footer
-{
-    font-size: $footerFontSize;
-}
-
-.toolbar
-{
+.toolbar {
     background: linear-gradient($barBackgroundColor, $gradientBackgroundColor, $barBackgroundColor);
     color: $alternateTextColor;
     display: block;
     padding: $defaultPadding;
     text-align: center;
 
-    & > div
-    {
+    &>div {
         margin-bottom: $defaultVerticalMargin;
     }
 
-    & button
-    {
+    & button {
         @include button;
     }
 }
 
-.goToFirst:before
-{
+.goToFirst:before {
     font-family: FontAwesome;
     content: "\f049\00a0";
 }
 
-.goBack:before
-{
+.goBack:before {
     font-family: FontAwesome;
     content: "\f048\00a0";
 }
 
-.goNext:after
-{
+.goNext:after {
     font-family: FontAwesome;
     content: "\00a0\f051";
 }
 
-.goToLast:after
-{
+.goToLast:after {
     font-family: FontAwesome;
     content: "\00a0\f050";
 }
 
-.characterCard
-{
+.characterCard {
     @include column('right');
 
-    & h2
-    {
-        font-family: $headerFontFamily;
-        font-size: $subHeaderFontSize;
-    }
-
-    & .description
-    {
+    & .description {
         display: inline-block;
         margin-right: $defaultHorizontalMargin;
         vertical-align: top;
         width: $leftColumnWidth;
 
-        & p
-        {
+        & p {
             margin-bottom: $defaultVerticalMargin;
         }
 
-        & ul.statistics
-        {
+        & ul.statistics {
             list-style: square;
 
-            & > li
-            {
+            &>li {
                 /* left margin override - 
                     default value causes <li> 
                     to extend beyond container */
@@ -212,32 +137,18 @@ footer
         }
     }
 
-    & .thumbnail
-    {
+    & .thumbnail {
         display: inline-block;
         width: $rightColumnWidth;
 
-        & img
-        {
+        & img {
             max-height: 20rem;
             max-width: 100%;
         }
     }
 }
 
-a, a:link, a:visited
-{
-    color: $alternateTextColor;
-    text-decoration: none;
-}
-
-a:hover
-{
-    text-decoration: underline;
-}
-
-.pageFooter
-{
+.pageFooter {
     background: linear-gradient($defaultBackgroundColor, $borderColor);
     flex: 0 0 0;
     padding: $defaultPadding;
